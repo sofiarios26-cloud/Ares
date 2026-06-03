@@ -4,12 +4,10 @@ import { NavbarActions } from '@/components/chat'
 import { Card } from '@/components/ui/Card'
 import { Navbar } from '@/components/ui/Navbar'
 import { IconBag, IconLeaf } from '@/components/icons/NavIcons'
-import { useAuth } from '@/hooks/useAuth'
 import { useProducts } from '@/hooks/useProducts'
 
 export function HomePage() {
-  const { profile } = useAuth()
-  const [category, setCategory] = useState<string | undefined>()
+    const [category, setCategory] = useState<string | undefined>()
   const {
     products,
     isLoading,
