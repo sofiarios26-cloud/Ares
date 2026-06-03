@@ -24,7 +24,7 @@ function buildInitialData(profile: Profile | null, user: User | null): ProfileEd
     username: profile?.username ?? '',
     displayName: getDisplayName(profile, user),
     bio: profile?.bio ?? '',
-    location: profile?.location ?? '',
+    location: profile?.location ?? 'Cordoba',
     avatarUrl: getAvatarUrl(profile, user),
   }
 }

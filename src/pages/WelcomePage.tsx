@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { IconLeaf } from '@/components/icons/NavIcons'
 import { MobileShell } from '@/components/layout/MobileShell'
+import logo from '@/assets/Ares-Logo.png'
 
 export function WelcomePage() {
   const navigate = useNavigate()
@@ -14,7 +15,14 @@ export function WelcomePage() {
         <div className="pointer-events-none absolute -left-16 bottom-40 size-56 rounded-full bg-ares-eco/8 blur-3xl" />
 
         <div className="animate-fade-in space-y-4">
-          <Badge variant="gold">Nueva temporada</Badge>
+        <div className="flex items-center gap-3">
+  <img
+    src={logo}
+    alt="ARES"
+    className="h-16 w-auto"
+  />
+  <Badge variant="gold">Nueva temporada</Badge>
+</div>
           <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight text-ares-white">
             Tu estilo,
             <br />

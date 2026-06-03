@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Badge } from '@/components/ui/Badge'
 import { IconLeaf } from '@/components/icons/NavIcons'
+import logo from '@/assets/Ares-Logo.png'
 
 const SPLASH_DURATION_MS = 2800
 
@@ -12,6 +13,7 @@ export function SplashPage() {
     const timer = window.setTimeout(() => {
       navigate('/welcome', { replace: true })
     }, SPLASH_DURATION_MS)
+
     return () => window.clearTimeout(timer)
   }, [navigate])
 
@@ -27,22 +29,22 @@ export function SplashPage() {
       </div>
 
       <div className="animate-scale-in relative z-10 flex flex-col items-center gap-6 text-center">
-        <div className="relative flex size-24 items-center justify-center rounded-3xl glass-gold animate-pulse-gold">
-          <span className="font-display text-4xl font-extrabold tracking-tighter text-gradient-gold">
-            A
-          </span>
-          <span className="absolute -bottom-1 -right-1 flex size-8 items-center justify-center rounded-full bg-ares-eco text-ares-dark">
-            <IconLeaf className="size-4" />
-          </span>
-        </div>
+        <img
+          src={logo}
+          alt="ARES"
+          className="h-28 w-auto object-contain"
+        />
+
         <div className="space-y-2">
           <h1 className="font-display text-4xl font-bold tracking-tight text-ares-white">
             ARES
           </h1>
+
           <p className="text-sm tracking-wide text-ares-gray">
             Moda urbana · Circular · Premium
           </p>
         </div>
+
         <Badge variant="eco" icon={<IconLeaf className="size-3" />}>
           Sostenible
         </Badge>

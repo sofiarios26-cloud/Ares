@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { IconArrowLeft } from '@/components/icons/NavIcons'
 import { cn } from '@/utils/cn'
+import logo from '@/assets/Ares-Logo.png'
 
 export type NavbarProps = {
   title?: string
@@ -45,15 +46,18 @@ export function Navbar({
           </button>
         ) : null}
         <div className="min-w-0">
-          {title ? (
-            <h1 className="truncate font-display text-base font-semibold tracking-tight text-ares-white">
-              {title}
-            </h1>
-          ) : (
-            <span className="font-display text-lg font-bold tracking-tight text-gradient-gold">
-              ARES
-            </span>
-          )}
+        <div className="flex items-center gap-2">
+        <img
+  src={logo}
+  alt="ARES"
+  className="h-9 w-auto object-contain"
+/>
+  {title ? (
+    <h1 className="truncate font-display text-base font-semibold tracking-tight text-ares-white">
+      {title}
+    </h1>
+  ) : null}
+</div>
           {subtitle ? (
             <p className="truncate text-[10px] uppercase tracking-widest text-ares-gray">
               {subtitle}

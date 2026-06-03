@@ -140,7 +140,20 @@ export const productsService = {
     if (error) throw new Error(mapAuthError(error.message))
     return mapProduct(data as ProductRow)
   },
-
+  async delete(productId: string): Promise<void> {
+    if (!isSupabaseReady()) {
+      throw new Error('Supabase not configured')
+    }
+  
+    const { error } = await getSupabaseClient()
+      .from('products')
+      .delete()
+      .eq('id', productId)
+  
+    if (error) {
+      throw new Error(mapAuthError(error.message))
+    }
+  },
   async countByUser(userId: string): Promise<number> {
     if (!isSupabaseReady()) return 0
 

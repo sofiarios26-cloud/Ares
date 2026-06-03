@@ -164,6 +164,7 @@ export function ProfilePage() {
         </Card>
 
         <ProductFeed
+        allowDelete={true}
           products={myProducts}
           isLoading={productsLoading}
           isLoadingMore={false}

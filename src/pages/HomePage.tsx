@@ -29,7 +29,7 @@ export function HomePage() {
   return (
     <div className="page-enter flex flex-1 flex-col">
       <Navbar
-        subtitle={profile?.location ?? 'Buenos Aires'}
+        subtitle="Cordoba, Argentina"
         rightSlot={
           <div className="flex items-center gap-1">
             <NavbarActions />
