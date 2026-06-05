@@ -13,10 +13,10 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['Ares-logo.png'],
+      includeAssets: ['Ares-logo-v2.png'],
       manifest: {
-        name: 'ARES',
-        short_name: 'ARES',
+        name: 'ARES NEW',
+short_name: 'ARESNEW',
         description: 'ARES — mobile-first application',
         theme_color: '#111111',
         background_color: '#111111',
@@ -25,21 +25,18 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: '/Ares-logo.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/Ares-logo.png',
+            src: '/Ares-logo-v2.png',
             sizes: '512x512',
             type: 'image/png',
+            purpose: 'any'
           },
           {
-            src: '/Ares-logo.png',
+            src: '/Ares-logo-v2.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'maskable',
+            purpose: 'maskable'
           },
+          
         ],
       },
       workbox: {
@@ -56,3 +53,4 @@ export default defineConfig({
     },
   },
 })
+ 
