@@ -25,7 +25,7 @@ short_name: 'ARESNEW',
         start_url: '/',
         icons: [
           {
-            src: '/apple-touch-icon.pbg',
+            src: '/apple-touch-icon.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
