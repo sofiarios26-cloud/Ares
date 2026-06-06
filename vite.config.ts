@@ -13,7 +13,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['Ares-logo-v2.png'],
+      includeAssets: ['apple-touch-icon.png'],
       manifest: {
         name: 'ARES NEW',
 short_name: 'ARESNEW',
@@ -25,13 +25,13 @@ short_name: 'ARESNEW',
         start_url: '/',
         icons: [
           {
-            src: '/Ares-logo-v2.png',
+            src: '/apple-touch-icon.pbg',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: '/Ares-logo-v2.png',
+            src: '/apple-touch-icon.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
