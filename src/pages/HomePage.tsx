@@ -5,8 +5,11 @@ import { Card } from '@/components/ui/Card'
 import { Navbar } from '@/components/ui/Navbar'
 import { IconBag, IconLeaf } from '@/components/icons/NavIcons'
 import { useProducts } from '@/hooks/useProducts'
+import { useNavigate } from 'react-router-dom' 
 
 export function HomePage() {
+  const navigate = useNavigate()
+  
     const [category, setCategory] = useState<string | undefined>()
   const {
     products,
@@ -33,6 +36,7 @@ export function HomePage() {
             <NavbarActions />
             <button
               type="button"
+              onClick={() => navigate('/purchases')}
               className="press-scale flex size-9 items-center justify-center rounded-full glass transition-colors duration-300 hover:border-ares-gold/30"
               aria-label="Bolsa"
             >

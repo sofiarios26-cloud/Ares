@@ -69,9 +69,22 @@ export function CheckoutSuccessPage() {
         ) : null}
         <AuthErrorBanner message={error} />
         <div className="flex w-full flex-col gap-2 pt-2">
-          <Button fullWidth onClick={() => navigate('/purchases')}>
-            Ver mis compras
-          </Button>
+        <button
+  style={{
+    width: '100%',
+    padding: '16px',
+    background: 'red',
+    color: 'white',
+    zIndex: 99999,
+    position: 'relative',
+  }}
+  onClick={() => {
+    console.log('CLICK');
+    navigate('/purchases');
+  }}
+>
+  TEST COMPRAS
+</button>
           <Button variant="outline" fullWidth onClick={() => navigate('/')}>
             Volver al inicio
           </Button>
