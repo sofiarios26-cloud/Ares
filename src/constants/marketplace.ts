@@ -1,6 +1,12 @@
 export const PRODUCT_CATEGORIES = [
-  'TEST123',
-  'TEST456',
+  'Deportiva',
+  'Vintage',
+  'Mundial',
+  'Invierno',
+  'Verano',
+  'Accesorios',
+  'Urbano',
+  'Calzado',
 ] as const
 
 export type ProductCategory = (typeof PRODUCT_CATEGORIES)[number]
