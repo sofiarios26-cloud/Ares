@@ -1,24 +1,9 @@
 export const PRODUCT_CATEGORIES = [
-  'Streetwear',
-  'Vintage',
-  'Premium',
-  'Eco',
-  'Denim',
-  'Outerwear',
-  'Footwear',
-  'Accessories',
+  'TEST123',
+  'TEST456',
 ] as const
 
 export type ProductCategory = (typeof PRODUCT_CATEGORIES)[number]
-
-export const PRODUCT_CONDITIONS = [
-  'Nuevo',
-  'Como nuevo',
-  'Bueno',
-  'Usado',
-] as const
-
-export type ProductCondition = (typeof PRODUCT_CONDITIONS)[number]
 
 export const PRODUCT_SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'Único'] as const
 
