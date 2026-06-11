@@ -12,7 +12,6 @@ import { Input } from '@/components/ui/Input'
 import { Navbar } from '@/components/ui/Navbar'
 import {
   PRODUCT_CATEGORIES,
-  PRODUCT_CONDITIONS,
   PRODUCT_SIZES,
 } from '@/constants/marketplace'
 import { useAuth } from '@/hooks/useAuth'
@@ -33,7 +32,6 @@ const initialForm: FormState = {
   title: '',
   description: '',
   brand: '',
-  condition: '',
   size: '',
   color: '',
   location: '',
@@ -60,8 +58,6 @@ export function SellPage() {
       case 1:
         return form.images.length > 0
       case 2:
-        return Boolean(form.title.trim() && form.condition && form.brand.trim())
-      case 3:
         return Number(priceInput) > 0
       default:
         return true
@@ -86,7 +82,6 @@ export function SellPage() {
         title: form.title.trim(),
         description: form.description.trim(),
         brand: form.brand.trim(),
-        condition: form.condition,
         size: form.size || 'Único',
         color: form.color.trim() || '—',
         location: form.location.trim() || 'Argentina',
@@ -183,21 +178,6 @@ export function SellPage() {
             <div className="space-y-1.5">
               <label className="text-xs font-medium text-ares-gray-light">Estado</label>
               <div className="flex flex-wrap gap-2">
-                {PRODUCT_CONDITIONS.map((c) => (
-                  <button
-                    key={c}
-                    type="button"
-                    onClick={() => update({ condition: c })}
-                    className={cn(
-                      'rounded-full border px-3 py-1 text-xs font-medium transition-all duration-300',
-                      form.condition === c
-                        ? 'border-ares-eco/40 bg-ares-eco/15 text-ares-eco'
-                        : 'border-white/10 text-ares-gray',
-                    )}
-                  >
-                    {c}
-                  </button>
-                ))}
               </div>
             </div>
             <div className="space-y-1.5">
@@ -277,7 +257,6 @@ export function SellPage() {
                 {formatPrice(Number(priceInput))}
               </p>
               <p className="text-sm text-ares-gray">
-                {form.brand} · {form.condition} · Talle {form.size || 'Único'}
               </p>
               <p className="text-sm text-ares-gray">{form.images.length} foto(s)</p>
             </div>
