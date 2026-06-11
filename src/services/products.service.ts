@@ -126,7 +126,6 @@ export const productsService = {
         title: input.title,
         description: input.description,
         category: input.category,
-        condition: input.condition,
         size: input.size,
         brand: input.brand,
         color: input.color,

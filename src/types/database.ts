@@ -50,7 +50,6 @@ export type Database = {
           description: string | null
           price: number
           category: string
-          condition: string
           size: string | null
           brand: string | null
           color: string | null
@@ -66,7 +65,6 @@ export type Database = {
           description?: string | null
           price: number
           category: string
-          condition: string
           size?: string | null
           brand?: string | null
           color?: string | null
@@ -82,7 +80,6 @@ export type Database = {
           description?: string | null
           price?: number
           category?: string
-          condition?: string
           size?: string | null
           brand?: string | null
           color?: string | null

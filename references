@@ -1,0 +1,74 @@
+[1mdiff --git a/src/pages/SellPage.tsx b/src/pages/SellPage.tsx[m
+[1mindex 045f388..2845e3f 100644[m
+[1m--- a/src/pages/SellPage.tsx[m
+[1m+++ b/src/pages/SellPage.tsx[m
+[36m@@ -12,7 +12,6 @@[m [mimport { Input } from '@/components/ui/Input'[m
+ import { Navbar } from '@/components/ui/Navbar'[m
+ import {[m
+   PRODUCT_CATEGORIES,[m
+[31m-  PRODUCT_CONDITIONS,[m
+   PRODUCT_SIZES,[m
+ } from '@/constants/marketplace'[m
+ import { useAuth } from '@/hooks/useAuth'[m
+[36m@@ -33,7 +32,6 @@[m [mconst initialForm: FormState = {[m
+   title: '',[m
+   description: '',[m
+   brand: '',[m
+[31m-  condition: '',[m
+   size: '',[m
+   color: '',[m
+   location: '',[m
+[36m@@ -60,8 +58,6 @@[m [mexport function SellPage() {[m
+       case 1:[m
+         return form.images.length > 0[m
+       case 2:[m
+[31m-        return Boolean(form.title.trim() && form.condition && form.brand.trim())[m
+[31m-      case 3:[m
+         return Number(priceInput) > 0[m
+       default:[m
+         return true[m
+[36m@@ -86,7 +82,6 @@[m [mexport function SellPage() {[m
+         title: form.title.trim(),[m
+         description: form.description.trim(),[m
+         brand: form.brand.trim(),[m
+[31m-        condition: form.condition,[m
+         size: form.size || 'Único',[m
+         color: form.color.trim() || '—',[m
+         location: form.location.trim() || 'Argentina',[m
+[36m@@ -183,21 +178,6 @@[m [mexport function SellPage() {[m
+             <div className="space-y-1.5">[m
+               <label className="text-xs font-medium text-ares-gray-light">Estado</label>[m
+               <div className="flex flex-wrap gap-2">[m
+[31m-                {PRODUCT_CONDITIONS.map((c) => ([m
+[31m-                  <button[m
+[31m-                    key={c}[m
+[31m-                    type="button"[m
+[31m-                    onClick={() => update({ condition: c })}[m
+[31m-                    className={cn([m
+[31m-                      'rounded-full border px-3 py-1 text-xs font-medium transition-all duration-300',[m
+[31m-                      form.condition === c[m
+[31m-                        ? 'border-ares-eco/40 bg-ares-eco/15 text-ares-eco'[m
+[31m-                        : 'border-white/10 text-ares-gray',[m
+[31m-                    )}[m
+[31m-                  >[m
+[31m-                    {c}[m
+[31m-                  </button>[m
+[31m-                ))}[m
+               </div>[m
+             </div>[m
+             <div className="space-y-1.5">[m
+[36m@@ -277,7 +257,6 @@[m [mexport function SellPage() {[m
+                 {formatPrice(Number(priceInput))}[m
+               </p>[m
+               <p className="text-sm text-ares-gray">[m
+[31m-                {form.brand} · {form.condition} · Talle {form.size || 'Único'}[m
+               </p>[m
+               <p className="text-sm text-ares-gray">{form.images.length} foto(s)</p>[m
+             </div>[m
+[36m@@ -328,4 +307,4 @@[m [mexport function SellPage() {[m
+       </div>[m
+     </MobileShell>[m
+   )[m
+[31m-}[m
+[32m+[m[32m}[m
+\ No newline at end of file[m

@@ -166,7 +166,6 @@ export function ProductDetailPage() {
         <div className="animate-slide-up space-y-3">
           <div className="flex flex-wrap gap-2">
             <Badge variant="gold">{product.category}</Badge>
-            <Badge variant="neutral">{product.condition}</Badge>
             {product.size ? <Badge variant="outline">Talle {product.size}</Badge> : null}
             {product.category === 'Eco' ? (
               <Badge variant="eco" icon={<IconLeaf className="size-3" />}>
@@ -198,7 +197,6 @@ export function ProductDetailPage() {
           ) : null}
           {product.color ? <Detail label="Color" value={product.color} /> : null}
           {product.size ? <Detail label="Talle" value={product.size} /> : null}
-          <Detail label="Estado" value={product.condition} />
         </div>
 
         <div className="flex gap-2">

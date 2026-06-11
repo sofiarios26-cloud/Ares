@@ -21,7 +21,6 @@ export type CreateProductInput = {
   title: string
   description: string
   category: string
-  condition: string
   size: string
   brand: string
   color: string
