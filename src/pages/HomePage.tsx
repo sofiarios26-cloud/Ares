@@ -51,7 +51,7 @@ export function HomePage() {
           <div className="flex items-end justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-ares-gray">
-                Curado para vos
+               VESTI DIFERENTE
               </p>
               <h2 className="font-display text-2xl font-bold text-ares-white">
                 Destacados
