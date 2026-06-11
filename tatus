@@ -1,0 +1,54 @@
+[1mdiff --git a/src/pages/CheckoutResultPages.tsx b/src/pages/CheckoutResultPages.tsx[m
+[1mindex b7c7ebc..0527699 100644[m
+[1m--- a/src/pages/CheckoutResultPages.tsx[m
+[1m+++ b/src/pages/CheckoutResultPages.tsx[m
+[36m@@ -69,9 +69,22 @@[m [mexport function CheckoutSuccessPage() {[m
+         ) : null}[m
+         <AuthErrorBanner message={error} />[m
+         <div className="flex w-full flex-col gap-2 pt-2">[m
+[31m-          <Button fullWidth onClick={() => navigate('/purchases')}>[m
+[31m-            Ver mis compras[m
+[31m-          </Button>[m
+[32m+[m[32m        <button[m
+[32m+[m[32m  style={{[m
+[32m+[m[32m    width: '100%',[m
+[32m+[m[32m    padding: '16px',[m
+[32m+[m[32m    background: 'red',[m
+[32m+[m[32m    color: 'white',[m
+[32m+[m[32m    zIndex: 99999,[m
+[32m+[m[32m    position: 'relative',[m
+[32m+[m[32m  }}[m
+[32m+[m[32m  onClick={() => {[m
+[32m+[m[32m    console.log('CLICK');[m
+[32m+[m[32m    navigate('/purchases');[m
+[32m+[m[32m  }}[m
+[32m+[m[32m>[m
+[32m+[m[32m  TEST COMPRAS[m
+[32m+[m[32m</button>[m
+           <Button variant="outline" fullWidth onClick={() => navigate('/')}>[m
+             Volver al inicio[m
+           </Button>[m
+[1mdiff --git a/src/pages/HomePage.tsx b/src/pages/HomePage.tsx[m
+[1mindex 23aef01..550e973 100644[m
+[1m--- a/src/pages/HomePage.tsx[m
+[1m+++ b/src/pages/HomePage.tsx[m
+[36m@@ -5,8 +5,11 @@[m [mimport { Card } from '@/components/ui/Card'[m
+ import { Navbar } from '@/components/ui/Navbar'[m
+ import { IconBag, IconLeaf } from '@/components/icons/NavIcons'[m
+ import { useProducts } from '@/hooks/useProducts'[m
+[32m+[m[32mimport { useNavigate } from 'react-router-dom'[m[41m [m
+ [m
+ export function HomePage() {[m
+[32m+[m[32m  const navigate = useNavigate()[m
+[32m+[m[41m  [m
+     const [category, setCategory] = useState<string | undefined>()[m
+   const {[m
+     products,[m
+[36m@@ -33,6 +36,7 @@[m [mexport function HomePage() {[m
+             <NavbarActions />[m
+             <button[m
+               type="button"[m
+[32m+[m[32m              onClick={() => navigate('/purchases')}[m
+               className="press-scale flex size-9 items-center justify-center rounded-full glass transition-colors duration-300 hover:border-ares-gold/30"[m
+               aria-label="Bolsa"[m
+             >[m
