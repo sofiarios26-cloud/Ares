@@ -30,7 +30,7 @@ export function HomePage() {
   return (
     <div className="page-enter flex flex-1 flex-col">
       <Navbar
-        subtitle="Cordoba, Argentina"
+        subtitle="Córdoba, Argentina"
         rightSlot={
           <div className="flex items-center gap-1">
             <NavbarActions />
@@ -51,7 +51,7 @@ export function HomePage() {
           <div className="flex items-end justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-ares-gray">
-               VESTI DIFERENTE
+               VESTí DIFERENTE
               </p>
               <h2 className="font-display text-2xl font-bold text-ares-white">
                 Destacados
