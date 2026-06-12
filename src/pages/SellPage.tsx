@@ -55,10 +55,16 @@ export function SellPage() {
     switch (step) {
       case 0:
         return Boolean(form.category)
+  
       case 1:
         return form.images.length > 0
+  
       case 2:
+        return Boolean(form.title.trim() && form.brand.trim())
+  
+      case 3:
         return Number(priceInput) > 0
+  
       default:
         return true
     }
